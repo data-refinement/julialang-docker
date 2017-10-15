@@ -77,13 +77,13 @@ RUN /usr/local/bin/jupyter notebook --generate-config && sed -e "162s/^#//" -e "
 
 # Julia v0.4.0 packages add
 RUN /opt/julia-0.4.7/bin/julia -e 'Pkg.update()'\
-    && /opt/julia-0.4.7/bin/julia -e 'Pkg.build("Conda")'\
+    && /opt/julia-0.4.7/bin/julia -e 'Pkg.add("Conda")'\
     && /opt/julia-0.4.7/bin/julia -e 'Pkg.add("IJulia")'
 
 # Julia v0.6.0 packages add
 RUN /opt/julia/bin/julia -e 'Pkg.update()'\
-    && /opt/julia/bin/julia -e 'Pkg.build("Conda")'\
     && /opt/julia/bin/julia -e 'Pkg.add("IJulia")'\
+    && /opt/julia/bin/julia -e 'Pkg.add("Conda")'\
     && /opt/julia/bin/julia -e 'Pkg.add("PyPlot") '\
     && /opt/julia/bin/julia -e 'Pkg.add("Plots")'\
     && /opt/julia/bin/julia -e 'Pkg.add("DifferentialEquations")'\
