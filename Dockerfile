@@ -93,4 +93,4 @@ RUN /opt/julia/bin/julia -e 'Pkg.update()'\
     && /opt/julia/bin/julia -e 'Pkg.add("Stan")'
 
 EXPOSE 8888
-CMD /usr/local/bin/jupyter-notebook --allow-root
+CMD /opt/miniconda3/bin/jupyter notebook --allow-root
