@@ -48,7 +48,7 @@ RUN  mkdir /opt/miniconda3 && cd /opt/miniconda3 && curl -L https://repo.continu
      && echo "export CONDA_JL_HOME=\"/opt/miniconda3/envs/conda_jl\"" >> /etc/environment
 
 RUN /opt/miniconda3/bin/pip install --upgrade pip\
-    && /opt/miniconda3/bin/pip install pyzmq PyDrive google-api-python-client jsonpointer jsonschema tornado sphinx pygments nose readline mistune invoke jupyter
+    && /opt/miniconda3/bin/pip install pyzmq PyDrive google-api-python-client jsonpointer jsonschema tornado sphinx pygments nose readline mistune invoke matplotlib jupyter
 
 # Install cmdStan
 RUN mkdir -p /opt/cmdstan && curl -L https://github.com/stan-dev/cmdstan/releases/download/v2.17.0/cmdstan-2.17.0.tar.gz | tar -z -x -C /opt/cmdstan --strip-components=1 -f -\
