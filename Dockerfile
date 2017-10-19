@@ -21,6 +21,7 @@ RUN apt-get update \
     gfortran \
     gettext \
     git \
+    imagemagick \
     libreadline-dev \
     libncurses-dev \
     libpcre3-dev \
