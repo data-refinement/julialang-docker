@@ -62,13 +62,13 @@ RUN mkdir -p /opt/julia-0.4.7 && \
     curl -L https://julialang.s3.amazonaws.com/bin/linux/x64/0.4/julia-0.4.7-linux-x86_64.tar.gz | tar -z -x -C /opt/julia-0.4.7 --strip-components=1 -f -
 RUN ln -fs /opt/julia-0.4.7 /opt/julia-0.4
 
-# Install julia 0.6
-RUN mkdir -p /opt/julia-0.6.0 && \
-    curl -L https://julialang.s3.amazonaws.com/bin/linux/x64/0.6/julia-0.6.0-linux-x86_64.tar.gz | tar -z -x -C /opt/julia-0.6.0 --strip-components=1 -f -
-RUN ln -fs /opt/julia-0.6.0 /opt/julia-0.6
+# Install julia 0.6.1
+RUN mkdir -p /opt/julia-0.6.1 && \
+    curl -L https://julialang.s3.amazonaws.com/bin/linux/x64/0.6/julia-0.6.1-linux-x86_64.tar.gz | tar -z -x -C /opt/julia-0.6.1 --strip-components=1 -f -
+RUN ln -fs /opt/julia-0.6.1 /opt/julia-0.6
 
 # Make v0.6 default julia
-RUN ln -fs /opt/julia-0.6.0 /opt/julia
+RUN ln -fs /opt/julia-0.6.1 /opt/julia
 
 RUN echo "PATH=\"/opt/julia/bin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games\"" >> /etc/environment && \
     echo "export PATH" >> /etc/environment && \
