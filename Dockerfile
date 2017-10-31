@@ -64,7 +64,7 @@ RUN ln -fs /opt/julia-0.4.7 /opt/julia-0.4
 
 # Install julia 0.6.1
 RUN mkdir -p /opt/julia-0.6.1 && \
-    curl -L https://julialang.s3.amazonaws.com/bin/linux/x64/0.6/julia-0.6.1-linux-x86_64.tar.gz | tar -z -x -C /opt/julia-0.6.1 --strip-components=1 -f -
+    curl -L https://julialang-s3.julialang.org/bin/linux/x64/0.6/julia-0.6.1-linux-x86_64.tar.gz | tar -z -x -C /opt/julia-0.6.1 --strip-components=1 -f -
 RUN ln -fs /opt/julia-0.6.1 /opt/julia-0.6
 
 # Make v0.6 default julia
