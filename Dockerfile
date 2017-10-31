@@ -88,6 +88,7 @@ RUN /opt/julia/bin/julia -e 'Pkg.update()'\
     && /opt/julia/bin/julia -e 'ENV["PYTHON"]="/opt/miniconda3/bin/python3"; Pkg.add("Conda")'\
     && /opt/julia/bin/julia -e 'ENV["PYTHON"]="/opt/miniconda3/bin/python3"; Pkg.add("PyPlot") '\
     && /opt/julia/bin/julia -e 'Pkg.add("Plots")'\
+    && /opt/julia/bin/julia -e 'Pkg.add("RDatasets")'\
     && /opt/julia/bin/julia -e 'Pkg.add("DifferentialEquations")'\
     && /opt/julia/bin/julia -e 'Pkg.add("ODE")'\
     && /opt/julia/bin/julia -e 'Pkg.add("Mamba")'\
