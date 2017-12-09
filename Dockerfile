@@ -46,10 +46,10 @@ RUN pip3 install --upgrade pip\
 
 # Install miniconda3
 RUN  mkdir /opt/miniconda3 && cd /opt/miniconda3 && curl -L https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -o /opt/miniconda3/miniconda3.sh\
+     && echo "export CONDA_JL_HOME=\"/opt/miniconda3/envs/conda_jl\"" >> /etc/enviroment\
+     && echo "export CONDA_JL_VERSION=\"3\"" >> /etc/enviroment\
      && bash /opt/miniconda3/miniconda3.sh -b -u -p /opt/miniconda3\
-     && /opt/miniconda3/bin/conda update --all -y\
-     && /opt/miniconda3/bin/conda create -y -n conda_jl python\
-     && echo "export CONDA_JL_HOME=\"/opt/miniconda3/envs/conda_jl\"" >> /etc/enviroment
+     && /opt/miniconda3/bin/conda update --all -y
 
 # Install cmdStan
 RUN mkdir -p /opt/cmdStan && curl -L https://github.com/stan-dev/cmdstan/releases/download/v2.17.0/cmdstan-2.17.0.tar.gz | tar -z -x -C /opt/cmdStan --strip-components=1 -f -\
